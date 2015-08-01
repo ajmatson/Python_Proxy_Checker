@@ -21,7 +21,7 @@ __author__ = 'Alan J. Matson'
 __email__ = 'alan@echotek.us'
 __copyright__ = 'Copyright 2015, EchoTEK Solution'
 __license__ = 'GPL'
-__version__ = '1.9.0'
+__version__ = '1.8.0'
 __status__ = 'QA Testing'
 
 # Import the modules needed for the script
