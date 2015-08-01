@@ -49,6 +49,8 @@ check_string = 'RANDOM_STRING'  # Change to match the string stored on your URI
 dt = datetime.datetime.now()
 date_time = dt.strftime('%Y/%m/%d %H:%M:%S')
 
+codeauth = "W4SO4-30SD1-BHS5S-10E98-CFEEB"
+
 
 
 
