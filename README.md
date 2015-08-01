@@ -8,6 +8,7 @@ Example for proxylist.txt file:
   #badproxy.domain.com:8080
 
 To run the script you need to setup a CRON job for your desired time for example:
+
   0,30 * * * * /proxy_check_script.py /dev/null 2>&1
   
 
