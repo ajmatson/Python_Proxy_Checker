@@ -15,7 +15,7 @@ To run the script you need to setup a CRON job for your desired time for example
 This script is provided as is and no expressed support or warranty. I will help if can but not guaranteed. License is GPL and content can be modified as long as credit is given by not removing the script headers.
 
 
-New Features Planned: <br />
+New Features Planned for v2.0:<br />
 &nbsp;&nbsp;&nbsp;&nbsp;- Better logging, detailed email alerts <br />
 &nbsp;&nbsp;&nbsp;&nbsp;- Installer including auto creating proxylist.txt based on installer prompting for information. <br />
 &nbsp;&nbsp;&nbsp;&nbsp;- Logging moved to /var/log and setting up logrotate 
