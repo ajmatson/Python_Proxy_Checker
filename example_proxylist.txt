@@ -1,0 +1,7 @@
+#
+# Proxy List used in the proxy_check_script.py checker. To excluded proxies from being checked comment them out with the "#".
+#
+proxy1.domain.com:8080 
+proxy2.domain.com:3128 
+proxy3.domain.com:1234 
+#badproxy.domain.com:8080 
