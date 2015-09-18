@@ -49,6 +49,9 @@ check_string = 'RANDOM_STRING'  # Change to match the string stored on your URI
 dt = datetime.datetime.now()
 date_time = dt.strftime('%Y/%m/%d %H:%M:%S')
 
+# Log file location
+lf_location = '/var/log/proxy_checker.log'
+
 codeauth = "W4SO4-30SD1-BHS5S-10E98-CFEEB"
 
 
@@ -61,7 +64,6 @@ codeauth = "W4SO4-30SD1-BHS5S-10E98-CFEEB"
 
 def proxy_test(proxy_server):
     proxy_server2, proxy_port2 = proxy_server.split(':')
-    #print proxy_server2 + proxy_port2
     full_proxy_string = "http://%s:%s@%s:%s" % (proxy_user, proxy_password, proxy_server2, proxy_port2)
     response = "null"
     try:
@@ -69,14 +71,13 @@ def proxy_test(proxy_server):
 
         proxy = urllib2.build_opener(proxy_handler)
         proxy.addheaders = [
-            ('User-agent', 'Mozilla/5.0 Python/2.7'),
+            ('User-agent', 'Mozilla/5.0 Python/2.7 Code/' + codeauth),
             ('Pragma', 'no-cache'),
             ('X-Reqested-By', 'Proxy Check Script'),
-            ('X-Powered-By', 'ProxyCheck.ajm')
+            ('X-Powered-By', 'ProxyCheck.ns')
         ]
         urllib2.install_opener(proxy)
         connection = urllib2.urlopen(uri, timeout = 60)
-
         response = connection.read()
         response = response.strip()
     except urllib2.HTTPError, err:
@@ -88,14 +89,14 @@ def proxy_test(proxy_server):
             sys.exit(502)
     except urllib2.URLError:
         print "Proxy check failed for " + proxy_server + ". Sending email alert!"
-        with open("proxy.log", "a") as log_file:
+        with open(lf_location, "a") as log_file:
             log_file.write(date_time + " - " + "Proxy checked failed for " + proxy_server + ". Sending email alert!" + "\n")
         send_alert(proxy_server, smtp_domain, addr_to, addr_from, smtp_server)
 
     if response == check_string:
         print "Response string matches: " + response
         print "Proxy connection successful for user %s via proxy %s" % (proxy_user, proxy_server)
-        with open("proxy.log", "a") as log_file:
+        with open(lf_location, "a") as log_file:
             log_file.write("%s - Proxy connection successful for user %s via proxy %s \n" % (date_time,proxy_user, proxy_server))
     elif response == "null":
         print ""
