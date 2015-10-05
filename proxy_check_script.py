@@ -71,7 +71,7 @@ def proxy_test(proxy_server):
 
         proxy = urllib2.build_opener(proxy_handler)
         proxy.addheaders = [
-            ('User-agent', 'Mozilla/5.0 Python/2.7 Code/' + codeauth),
+            ('User-agent', 'Mozilla/5.0 Python/2.7 ProxyCheck/1.80 Code/' + codeauth),
             ('Pragma', 'no-cache'),
             ('X-Reqested-By', 'Proxy Check Script'),
             ('X-Powered-By', 'ProxyCheck.ns')
