@@ -1,5 +1,5 @@
 # Python Proxy Checker v1.8.1<br />
-A set of python scripts (written for Python 2.7) to test proxy traffic and alert if down. Good for Security Admins for live proxy monitoring as it tests the actually traffic for a string on the internet not just if the proxy is up. You need an webserver with a flat file and a single string with no line breaks to query against. Currently the scripts need to be all downloaded and the proxies added to the proxylist.txt file (notice bad proxies can be excluded from check with a # in front of them):
+A set of python scripts (written for Python 2.7) to test proxy traffic and alert if down. Good for Security Admins for live proxy monitoring as it tests the actually traffic for a string on the internet not just if the proxy is up. Originally this was written for Websense Content Gateway proxies but can be tailored to virtually any proxy. You need an webserver with a flat file and a single string with no line breaks to query against. Currently the scripts need to be all downloaded and the proxies added to the proxylist.txt file (notice bad proxies can be excluded from check with a # in front of them):
 
 Example for proxylist.txt file: <br />
 &nbsp;&nbsp;&nbsp;&nbsp;proxy1.domain.com:8080 <br />
