@@ -31,6 +31,16 @@ __status__ = 'QA Testing'
 import urllib2, sys, datetime
 from smtptest import send_alert
 
+# Run a check and see if there is an update to the script
+currver = '1.8.0'
+connection = urllib2.urlopen('https://raw.githubusercontent.com/ajmatson/Python_Proxy_Checker/master/version', timeout = 60)
+listedver = connection.read()
+listedver = listedver.strip()
+if currver != listedver:
+    print "There is an update to the script. Please visit https://github.com/ajmatson/Python_Proxy_Checker"
+    exit 0
+
+
 # Set the initial variables for use
 uri = "http://www.domain.com/check.txt"
 proxy_list_location = "proxylist.txt"
