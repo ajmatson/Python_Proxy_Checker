@@ -5,7 +5,10 @@ This script is designed to analyse a test a proxy for specific content from an o
 in the proxy_list_location variable below. Please also fill in the other information such as the URI to test from that has the string, the string to
 check of course, and the proxy auth information needed.
 
-Latest Revision 1.8.0:
+Latest Revision 1.8.1:
+    - Cleaned up some code and fixed a few backend issues.
+
+Revision 1.8.0:
     - Added the ability to add the port to the proxylist.txt and have it parse (eg. 1.1.1.1:3128) allowing for different proxy ports to be used for multiple proxies.
     - Added some additional logging.
     - Cleaned up code a bit more.
@@ -21,7 +24,7 @@ __author__ = 'Alan J. Matson'
 __email__ = 'alan@echotek.us'
 __copyright__ = 'Copyright 2015, EchoTEK Solution'
 __license__ = 'GPL'
-__version__ = '1.8.0'
+__version__ = '1.8.1'
 __status__ = 'QA Testing'
 
 # Import the modules needed for the script
@@ -71,7 +74,7 @@ def proxy_test(proxy_server):
 
         proxy = urllib2.build_opener(proxy_handler)
         proxy.addheaders = [
-            ('User-agent', 'Mozilla/5.0 Python/2.7 ProxyCheck/1.80 Code/' + codeauth),
+            ('User-agent', 'Mozilla/5.0 Python/2.7 ProxyCheck/1.8.1 Code/' + codeauth),
             ('Pragma', 'no-cache'),
             ('X-Reqested-By', 'Proxy Check Script'),
             ('X-Powered-By', 'ProxyCheck.ns')
